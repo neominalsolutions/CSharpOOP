@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CSharpOOP.Abstraction;
+using CSharpOOP.Collections;
 using CSharpOOP.Encapsulation;
 using CSharpOOP.Generics.Entities;
 using CSharpOOP.Generics.Repositories;
@@ -132,6 +133,8 @@ enc.Encrypt("32434324"); // Hash kriptoğrafi yapar.
 
 #region GenericClass
 
+/*
+
 var postRepo = new PostRepository();
 postRepo.Insert(new CSharpOOP.Generics.Entities.Post { Title = "Makale1", Body = "Makale İçerik" });
 var list = postRepo.Where(x => x.Title == "Makale1").ToList();
@@ -144,8 +147,21 @@ postRepo.Delete(1);
 
 var data = postRepo.FindAll();
 
+
 Console.ReadKey();
 
+*/
+
 #endregion
+
+
+
+#region Collections
+
+CollectionsSample.HashSetSample();
+
+
+#endregion
+
 
 
