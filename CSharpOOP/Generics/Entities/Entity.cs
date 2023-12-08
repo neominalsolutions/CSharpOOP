@@ -12,6 +12,14 @@ namespace CSharpOOP.Generics.Entities
     {
         public TKey Id { get; init; }
 
+       
+        // Nesnenin referanslarını kopararak içindeki değerleri kopyalamamızı sağlar.
+       public virtual Entity<TKey> Clone()
+       {
+          return (Entity<TKey>)MemberwiseClone();
+       }
+        
+
 
     }
 }

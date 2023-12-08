@@ -1,11 +1,18 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CSharpOOP.Abstraction;
 using CSharpOOP.Encapsulation;
+using CSharpOOP.Generics.Entities;
+using CSharpOOP.Generics.Repositories;
 using CSharpOOP.Inheritance;
 using CSharpOOP.Polymorphism;
 using System;
 
 Console.WriteLine("Hello, World!");
+
+
+#region Encapsulation
+
+/*
 
 // OOP 4 temel ilkemiz var
 // 1. Encapsulation (classlar içerisinde akışı gizli tutma)
@@ -18,6 +25,14 @@ customer.CloseAccount("Kredi ödemesini bitirdim", "24324-234324-234324");
 var acc = customer.GetCurrentAccount("24324-234324-234324");
 // acc.Balance = 100;
 
+*/
+
+#endregion
+
+
+#region InHeritance
+
+/*
 
 // 2. Inheritance   (ortak özelliklerin aktarımı, reusability)
 
@@ -31,8 +46,14 @@ string fullName = manager.FullName;
 var employee = new Employee("Ali", "Tan", "234243324-23432");
 string fullName2 = employee.FullName;
 
+*/
+
+#endregion
 
 
+#region Polymorphism
+
+/*
 
 // 3. Polymorphism  (çok biçimlilik, bir sınıfın yapacağı işlemleri farklı şekillerde de yapabilme kabiliyetini olması gerek. extensibility, bir kodun başka davranışlara adapte olabilme becerisi)
 
@@ -83,11 +104,17 @@ if(gasBill is IEnvironmentalCost)
   Console.WriteLine("gasBill is IEnvironmentalCost");
 }
 
+*/
+
+#endregion
 
 
-Console.ReadKey();
+#region Abstraction
+/*
 
 // 4. Abstraction (özetleme, soyutlama, yapılacak bir işlemin önce özetinin çıkarılması, detaylarının sonraya bırakılması)
+
+
 
 ICryptor cryptor = new AESCryptoService("324324");
 cryptor.Decrypt("sfsadsad");
@@ -95,5 +122,30 @@ cryptor.Encrypt("324234324"); // Simetrik Kriptografi yapar
 
 IEncrptor enc = new HashCryptoService();
 enc.Encrypt("32434324"); // Hash kriptoğrafi yapar.
+
+*/
+
+#endregion
+
+
+// Generic Class Sample
+
+#region GenericClass
+
+var postRepo = new PostRepository();
+postRepo.Insert(new CSharpOOP.Generics.Entities.Post { Title = "Makale1", Body = "Makale İçerik" });
+var list = postRepo.Where(x => x.Title == "Makale1").ToList();
+var updateItem = new Post();
+updateItem.Title = "Makale2";
+updateItem.Body = "Makale 2 İçerik";
+postRepo.Update(updateItem);
+var c = postRepo.Find(x => x.Title.StartsWith("M"));
+postRepo.Delete(1);
+
+var data = postRepo.FindAll();
+
+Console.ReadKey();
+
+#endregion
 
 

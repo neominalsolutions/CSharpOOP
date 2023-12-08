@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Generics.Repositories
 {
-  public abstract class RedisRepository<TEntity, TKey> : IRepository<TEntity, TKey>
+  public abstract class RedisRepository<TEntity, TKey> 
       where TEntity : Entity<TKey>
      where TKey : IComparable
   {

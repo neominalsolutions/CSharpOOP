@@ -12,5 +12,14 @@ namespace CSharpOOP.Generics.Entities
         {
             Id = 1;
         }
+
+    public string Title { get; set; }
+    public string Body { get; set; }
+
+    public override Entity<int> Clone()
+    {
+      return (Post)MemberwiseClone();
     }
+
+  }
 }
