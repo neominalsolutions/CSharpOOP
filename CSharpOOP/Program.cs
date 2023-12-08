@@ -1,12 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CSharpOOP.Abstraction;
 using CSharpOOP.Collections;
+using CSharpOOP.DelagatesEvents;
 using CSharpOOP.Encapsulation;
 using CSharpOOP.Generics.Entities;
 using CSharpOOP.Generics.Repositories;
 using CSharpOOP.Inheritance;
 using CSharpOOP.Polymorphism;
 using System;
+using System.Data;
+using System.Reflection;
 
 Console.WriteLine("Hello, World!");
 
@@ -165,3 +168,43 @@ CollectionsSample.HashSetSample();
 
 
 
+#region Delegates
+
+
+var myclass = new DelagateEventSample();
+
+MethodInfo[] methodInfos = myclass.GetType().GetMethods();
+
+// runtimede yakalan sınıfa ait methodlar aşağıdaki MessageDelegate üzerinden invoke edilir.
+
+foreach (MethodInfo item in methodInfos)
+{
+  if(item.IsStatic)
+  {
+    var dg = item.CreateDelegate<MessageDelegate>();
+    dg.Invoke("Deneme1");
+  }
+
+
+}
+
+
+// Events Sample
+
+var product = new Product();
+product.Price = 25;
+product.ProductName = "Ürün-1";
+product.Stock = 25;
+product.StockChanged += Product_StockChanged;
+
+product.IncreaseStock(10);
+product.DecreaseStock(5);
+
+void Product_StockChanged(object? sender, EventArgs e)
+{
+
+}
+
+
+
+#endregion
