@@ -5,6 +5,9 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
+
+
+
 namespace CSharpOOP.DelagatesEvents
 {
   public delegate void ProductStockChangeHandler (Product p, StockChangeEventArgs args);

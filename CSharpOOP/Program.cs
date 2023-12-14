@@ -6,6 +6,7 @@ using CSharpOOP.Encapsulation;
 using CSharpOOP.Generics.Entities;
 using CSharpOOP.Generics.Repositories;
 using CSharpOOP.Inheritance;
+using CSharpOOP.OtherTypes;
 using CSharpOOP.Polymorphism;
 using System;
 using System.Data;
@@ -205,6 +206,19 @@ void Product_StockChanged(object? sender, EventArgs e)
 
 }
 
+#endregion
 
+#region OtherTypes
+
+OtherTypes.ExtensionSample();
+OtherTypes.RegexSample();
+OtherTypes.RecordSample();
+OtherTypes.TuppleSample();
 
 #endregion
+
+
+
+// Serialization NewtonSoftJson ve System.Text.Json
+// Extension, Regex, Tupple, Record
+// Stream StreamReader StreamWriter ve FileStream yapılarını inceleyeceğiz.
