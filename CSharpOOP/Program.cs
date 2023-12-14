@@ -9,6 +9,7 @@ using CSharpOOP.Inheritance;
 using CSharpOOP.OtherTypes;
 using CSharpOOP.Polymorphism;
 using CSharpOOP.Serialization;
+using CSharpOOP.Streams;
 using System;
 using System.Data;
 using System.Reflection;
@@ -224,6 +225,14 @@ OtherTypes.TuppleSample();
 Serialization.NewtonSoftSample();
 Serialization.SystemTextJson();
 
+
+#endregion
+
+
+#region Streams
+
+Streams.StreamWriterReader();
+Streams.FileStreamWriterReader();
 
 #endregion
 
