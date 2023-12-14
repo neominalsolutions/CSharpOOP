@@ -8,6 +8,7 @@ using CSharpOOP.Generics.Repositories;
 using CSharpOOP.Inheritance;
 using CSharpOOP.OtherTypes;
 using CSharpOOP.Polymorphism;
+using CSharpOOP.Serialization;
 using System;
 using System.Data;
 using System.Reflection;
@@ -217,6 +218,14 @@ OtherTypes.TuppleSample();
 
 #endregion
 
+
+#region Serialization
+
+Serialization.NewtonSoftSample();
+Serialization.SystemTextJson();
+
+
+#endregion
 
 
 // Serialization NewtonSoftJson ve System.Text.Json
